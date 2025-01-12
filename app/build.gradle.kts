@@ -40,6 +40,22 @@ android {
 
 dependencies {
 
+    //room
+    implementation("androidx.room:room-runtime:2.5.0")
+    implementation("androidx.room:room-ktx:2.5.0")
+
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+
+    //ucrop
+    implementation ("com.github.yalantis:ucrop:2.2.7")
+
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    //material components
     implementation ("com.google.android.material:material:1.9.0")
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -50,6 +66,8 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-
-    // TODO: Tambahkan Library TensorFlow Lite
+    //tflite library
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-metadata:0.4.4")
 }
