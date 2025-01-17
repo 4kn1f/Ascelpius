@@ -20,6 +20,9 @@ class ResultActivity : AppCompatActivity() {
         val imageUri = Uri.parse(imageUriString)
         val confidence = intent.getIntExtra(EXTRA_CONFIDENCE, 0)
         val prediction = intent.getStringExtra(EXTRA_PREDICTION)
+
+        binding.resultImage.setImageURI(imageUri)
+        binding.resultText.text = "Prediction: $prediction\nConfidence: $confidence%"
     }
 
     companion object{

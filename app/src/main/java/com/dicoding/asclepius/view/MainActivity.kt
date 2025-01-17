@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
         currentImageUri?.let{
             binding.previewImageView.setImageURI(null)
             binding.previewImageView.setImageURI(it)
-            binding.previewImageView.invalidate()
         }
     }
 
