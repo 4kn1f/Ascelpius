@@ -3,8 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:background="?attr/selectableItemBackground">
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/ivNewsImage"
@@ -17,7 +16,6 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem"
         android:paddingTop="8dp"
         android:textStyle="bold" />
 
@@ -25,6 +23,5 @@
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="4dp"
-        android:textAppearance="?attr/textAppearanceCaption" />
+        android:paddingTop="4dp"/>
 </LinearLayout>
