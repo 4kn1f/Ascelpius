@@ -7,4 +7,5 @@
     <string name="result">Hasil Analisis</string>
     <string name="preview">Preview Gambar</string>
     <string name="confidence_score">Confidence Score:</string>
+    <string name="news_image">News Image</string>
 </resources>
