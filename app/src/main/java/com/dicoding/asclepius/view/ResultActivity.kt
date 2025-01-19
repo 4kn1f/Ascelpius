@@ -30,6 +30,4 @@ class ResultActivity : AppCompatActivity() {
         const val EXTRA_CONFIDENCE = "extra_confidence"
         const val EXTRA_PREDICTION = "extra_prediction"
     }
-
-
 }
