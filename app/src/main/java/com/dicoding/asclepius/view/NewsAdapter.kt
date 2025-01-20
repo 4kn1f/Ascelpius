@@ -9,7 +9,9 @@ import com.bumptech.glide.Glide
 import com.dicoding.asclepius.databinding.ItemNewsBinding
 import com.dicoding.asclepius.remote.response.ArticlesItem
 
-class NewsAdapter(private val newsList: List<ArticlesItem?>) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+
+    private val newsList = mutableListOf<ArticlesItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -18,12 +20,16 @@ class NewsAdapter(private val newsList: List<ArticlesItem?>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val news = newsList[position]
-        news?.let {
-            holder.bind(it)
-        }
+        holder.bind(news)
     }
 
     override fun getItemCount(): Int = newsList.size
+
+    fun submitNews(news: List<ArticlesItem?>?) {
+        newsList.clear()
+        newsList.addAll(news)
+        notifyDataSetChanged()
+    }
 
     inner class NewsViewHolder(private val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -33,7 +39,6 @@ class NewsAdapter(private val newsList: List<ArticlesItem?>) : RecyclerView.Adap
             Glide.with(binding.ivNewsImage.context)
                 .load(news.urlToImage)
                 .into(binding.ivNewsImage)
-
             binding.root.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(news.url))
                 binding.root.context.startActivity(intent)

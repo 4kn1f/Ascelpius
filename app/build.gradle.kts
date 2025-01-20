@@ -49,6 +49,9 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation ("androidx.activity:activity-ktx:1.7.2")
+
     // Room
     implementation("androidx.room:room-runtime:2.5.0")
     implementation("androidx.room:room-ktx:2.5.0")
