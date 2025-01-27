@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.asclepius.ViewModelFactory
@@ -25,6 +26,7 @@ class NewsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         setupRecyclerView()
         getCancerNews()
     }
@@ -42,7 +44,7 @@ class NewsActivity : AppCompatActivity() {
                 if (result != null && result.articles != null) {
                     newsAdapter.submitNews(result.articles)
                 } else {
-                    Toast.makeText(this@NewsActivity, "Error: Tidak ada data", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@NewsActivity, "Error: Not found", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
                 Toast.makeText(this@NewsActivity, "Error: ${e.message}", Toast.LENGTH_LONG).show()
