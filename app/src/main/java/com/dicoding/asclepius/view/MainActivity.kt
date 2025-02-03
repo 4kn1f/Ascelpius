@@ -33,6 +33,11 @@ class MainActivity : AppCompatActivity() {
         binding.analyzeButton.setOnClickListener {
             analyzeImage()
         }
+        binding.analyzeButton.setOnClickListener {
+            analyzeImage()
+        }
+
+        showImage()
     }
 
     private val launcherGallery = registerForActivityResult(
