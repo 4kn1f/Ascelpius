@@ -25,7 +25,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     override fun getItemCount(): Int = newsList.size
 
-    fun submitNews(news: List<ArticlesItem?>?) {
+    fun submitNews(news: List<ArticlesItem>) {
         newsList.clear()
         newsList.addAll(news)
         notifyDataSetChanged()
